@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: fastapi-courses-app
+    # [조건 4] 외부 80 포트 요청을 컨테이너 내부 8000 포트로 전달
+    ports:
+      - "80:8000"
+    # [조건 5] EC2 인스턴스 재부팅 시 자동 실행 정책
+    restart: always
